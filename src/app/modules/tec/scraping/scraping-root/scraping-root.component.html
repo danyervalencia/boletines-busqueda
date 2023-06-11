@@ -1,0 +1,94 @@
+<div class="pane-fgb">
+    <form class="frm-filter" [formGroup]="formFilt">
+    <div class="pane-filter" style="grid-template-columns: 10rem 20rem 2.125rem 1fr">
+        <div>
+        <label>Sección</label>
+            <select class="form-control" formControlName="seccion" (change)="grdClean()">
+                <option *ngFor="let _r of jSeccion;" [value]="_r.id"  [selected]="_r.id == '11'">{{ _r.nombre }}</option>
+            </select>
+        </div>
+        <div>
+            <label>Texto</label>
+            <input type="text" class="form-control" formControlName="texto" id="txtSearch"
+                (change)="grdClean()">  <!--(keyup.enter)="filtersEnter()"-->
+        </div>
+        <button class="btn btn-ui" [disabled]="dsbFilt" (click)="filtersEnter()" style="margin-top: 18px; padding: 4px 6px;">
+            <img [src]="icoSrv.getIcoG('loading')" *ngIf="loadScraping"/><img [src]="icoSrv.getIcon('filter')" *ngIf="!loadScraping"/></button>
+
+    </div>
+    </form>
+
+    <div class="pane-grid">
+    <div class="ui-grid">
+        <div class="ui-grid-view">
+            <div class="ui-grid-header">
+            <table class="ui-grid-htable">
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:250px">
+                    <col style="width:450px">
+                    <col style="width:100px">
+                    <col style="width:200px">
+                </colgroup>
+                <thead class="ui-thead">
+                <tr role="row">
+                    <th class="ui-thead-th sticky">
+                        <div class="ui-grid-sortable"></div>
+                    </th>
+                    <th class="ui-thead-th">
+                        <div class="ui-grid-sortable">Titulo</div>
+                    </th>
+                    <th class="ui-thead-th">
+                        <div class="ui-grid-sortable">Descripción</div>
+                    </th>
+                    <th class="ui-thead-th">
+                        <div class="ui-grid-sortable">Fuente</div>
+                    </th>
+                    <th class="ui-thead-th">
+                        <div class="ui-grid-sortable">URL</div>
+                    </th>
+                </tr>
+                </thead>
+            </table>
+            </div>
+        
+            <div class="ui-grid-content" style="height: 400px;">
+            <table class="ui-grid-tbody">
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:250px">
+                    <col style="width:450px">
+                    <col style="width:100px">
+                    <col style="width:200px">
+                </colgroup>
+                <tbody>
+                <tr class="ui-row" *ngFor="let _r of rootSrv.rows; let _i = index" (click)="grdSelected(_r)">
+                    <td class="right sticky">{{ _i + 1 }}</td>
+                    <td><div [innerHTML]="_r.titulo"></div></td>
+                    <td><div [innerHTML]="_r.descripcion"></div></td>
+                    <td title="{{ _r.fuente.nombre }}"><div [innerHTML]="_r.fuente.abrev"></div></td>
+                    <td><a [routerLink]="" (click)="goToLink(_r.url, _r.fuente.hrefprefix);" style="cursor: pointer; color: #0000EE">{{ _r.url }}</a></td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+            <app-spinner [spnName]="'spTSB'"></app-spinner>
+        </div>
+
+        <app-pager [countAll]="rootSrv.countAll" [countPage]="rootSrv.countPage" [recordLimit]="1000" (fnRefresh)="grdRefresh($event);"></app-pager>
+    </div>
+    </div>
+        
+    <div class="pane-buttons">
+        <!--<button class="btn btn-ui" [disabled]="false" (click)="modalEdit(1)">
+            <img [src]="icoSrv.getIcon('new')"/><span>Nuevo</span></button>
+        <button class="btn btn-ui" [disabled]="rootSrv.dsbBtn || rootSrv.opc._2" (click)="modalEdit(2)">
+            <img [src]="icoSrv.getIcon('edit')"/><span>Modificar</span></button>
+        <button class="btn btn-ui" [disabled]="rootSrv.dsbBtn || rootSrv.opc._4" (click)="modalEdit(4)">
+            <img [src]="icoSrv.getIcon('query')"/><span>Consulta</span></button>-->
+        <!--<button class="btn btn-ui" [disabled]="rootSrv.dsbBtn" (click)="modalVoBo()">-->  <!--|| rootSrv.opc._414101 || haveTask-->
+            <!--<img [src]="icoSrv.getIcon('acept')"/><span>Publicas</span></button>-->         
+    </div>
+</div>
+
+<ng-container #modal></ng-container>

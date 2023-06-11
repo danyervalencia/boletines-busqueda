@@ -1,0 +1,133 @@
+.body-container {
+  min: {
+    height: 100vh;
+    width: 100vw;
+  }
+  display: grid;
+  grid-template: {
+    columns: 1fr;
+    rows: 55px 1fr 80px;
+    areas:
+      "hea"
+      "mai"
+      "foo";
+  }
+  row-gap: 1px;
+  column-gap: 4px;
+}
+
+.main {
+  background-color: $white;
+  grid-area: mai;
+  display: grid;
+  grid-template: {
+    columns: 1fr;
+    rows: min-content 1fr;
+  }
+}
+
+.main-aside {
+  grid-area: asi
+}
+
+.main-nav {
+  border: 1px solid #99bce8;
+  grid-area: nav;
+  display: grid;
+  grid-template: {
+    columns: 1fr;
+    rows: 1fr;
+  }
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+select.form-control[multiple],
+select.form-control[size] {
+    height: auto
+}
+
+textarea.form-control {
+    height: auto
+}
+
+.frm-filter {
+  overflow: hidden;
+}
+
+
+.label-left {
+  padding-top: 0.375rem;
+  &.info {
+    color: $info;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+.label-top {
+  margin-bottom: 0.25rem;
+  margin-left: 0.25rem;
+}
+
+.label-ckeck {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/*.nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none
+}*/
+.nav-link {
+  display: block;
+  /*padding: .25rem .5rem*/
+}
+.nav-link:focus,
+.nav-link:hover {
+  text-decoration: none
+}
+.nav-link.disabled {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: default
+}
+
+
+
+
+.ui-grid-cell-tree .expand-coll:hover {
+  cursor: pointer
+}
+
+.ui-tree .ui-row.ui-tree-sub.show {
+  display: block
+}
+
+[class*=ui-tree-icon-branch] {
+  margin-top: -2px;
+  margin-bottom: -2px;
+  margin-right: 0;
+  height: 1.25rem;
+  vertical-align: top;
+  width: 1rem;
+}
+
+.ui-tree-node-text {
+  /*font-size: 11px;
+    line-height: 13px;*/
+  display: inline;
+  padding-left: 3px;
+}
+
+.ui-tree tr.ui-row:hover {
+  background-color: #ededed;
+}
+
+.ui-grid-cell-tree {
+  padding: 0 6px 0 0;
+}

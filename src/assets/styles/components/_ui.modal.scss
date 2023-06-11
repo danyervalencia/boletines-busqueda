@@ -1,0 +1,113 @@
+.ui-modal {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  left: 0;
+  outline: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width:  100%;
+  z-index: 1050;
+  display: table;
+  
+  .content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .edit{
+    background: var(--bgc-panel);
+    overflow: {
+      x: hidden;
+      y: auto;
+    }
+    padding: .5rem .5rem;
+    display: grid;
+    gap: .375rem;
+  }
+
+  .header {
+    height: 22px;
+    margin: 0;
+    position: relative;
+  
+    div {
+      display: inline-block;
+      padding-top: .125rem;
+      label {
+        color:rgb(4, 70, 140);
+        font-weight: bolder;
+        margin: 0;
+        padding: 0 .25rem 0;
+        vertical-align: middle;
+      }
+    }
+  
+    img {
+      transform: scale(.9);
+    }
+
+    span {
+      border: 2px solid #b5b5b5;
+      padding: 0 .25rem;
+      position: absolute;
+      top: 0;
+      right: .125rem;
+      cursor: pointer;
+    }
+  }
+
+  .info {
+    background: var(--bgc-panel);
+    border-bottom: 2px solid #a2b1c5;
+    overflow: {
+      x: auto;
+      y: hidden;
+    }
+    padding: .5rem .5rem .25rem;
+    display: grid;
+  
+    label {
+      color: #8b0000;
+      cursor: default;
+      line-height: 14px;
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
+
+    .label {
+      font-weight: bolder;
+    }
+  }
+}
+
+.ui-modal .edit label{
+  padding-left: .25rem;
+}
+
+.ui-modal .footer {
+  //background: var(--bgc-panel);
+  padding: .375rem 0 .125rem;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ui-modal .main {
+  border-color: #99bbe8;
+  border-width: 1px;
+  border-style: solid;
+  background: #fff;
+  color: black;
+}
+
+.ui-modal .win {
+  background-color: #ced9e7;
+  border-color: #a2b1c5;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  padding: .25rem;
+}

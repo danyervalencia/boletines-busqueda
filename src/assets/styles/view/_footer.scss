@@ -1,0 +1,16 @@
+.main-footer {
+    background-color: var(--bgc-system);
+    grid-area: foo;
+    /*position: fixed;*/
+    display: grid;
+    grid-template-columns: auto 2fr 1fr 1fr;
+    column-gap: .75rem;
+    grid-template-rows: auto;
+}
+
+/*.footer-inner {
+    color: var(--c-system);
+    line-height: 1.5rem;
+    padding-left: 0;
+    text-align: center;
+}*/

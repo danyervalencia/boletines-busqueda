@@ -1,0 +1,61 @@
+[tabindex="-1"]:focus:not(:focus-visible) {
+    outline: 0!important
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .form-control {
+    transition: none
+  }
+}
+.col-form-label {
+    padding-top: calc(.313rem + 1px);
+    padding-bottom: calc(.188rem + 1px);
+    margin-bottom: 0;
+    font-size: .75rem;
+    line-height: 1.5
+}
+.form-group {
+    margin-bottom: 1rem
+}
+.form-text {
+    display: block;
+    margin-top: .25rem
+}
+.form-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin:0;
+    /*margin-right: -5px;
+    margin-left: -5px*/
+}
+.form-row>.col,
+.form-row>[class*=col-] {
+    padding-right: 5px;
+    padding-left: 5px
+}
+.form-check {
+    position: relative;
+    display: block;
+    padding-left: 1.25rem
+}
+.form-check-input {
+    position: absolute;
+    margin-top: .3rem;
+    margin-left: -1.25rem
+}
+.form-check-input:disabled~.form-check-label,
+.form-check-input[disabled]~.form-check-label {
+    color: #6c757d
+}
+
+a.btn.disabled,
+fieldset:disabled a.btn {
+    pointer-events: none
+}
+input[type=button].btn-block,
+input[type=reset].btn-block,
+input[type=submit].btn-block {
+  width: 100%
+}

@@ -1,0 +1,50 @@
+<div class="ui-grid-pager" style="width: 100%;">
+<div class="ui-pg-btn-container">
+    <button class="ui-pg-btn" [ngClass]="{'ui-pg-btn-h':!isDsbFirst}" [disabled]="isDsbFirst || isDsb ? true : false"
+        (click)="first()" title=" Primera Página ">
+        <img [src]="icoSrv.getIcon('page-first')">
+        <!--<span [ngClass]="{'bgi-page-first-disabled':isDsbFirst,'bgi-page-first':!isDsbFirst}" role="img"></span>-->
+    </button>
+</div>
+<div class="ui-pg-btn-container">
+    <button class="ui-pg-btn" [ngClass]="{'ui-pg-btn-h':!isDsbFirst}" [disabled]="isDsbFirst || isDsb ? true : false"
+        (click)="prev()" title=" Página Anterior ">
+        <img [src]="icoSrv.getIcon('page-prev')">
+    </button>
+</div>
+    <div class="ui-pg-btn-container disabled ui-grid-disablePointerEvents">
+    <div class="ui-separator mr-o375r"></div>
+</div>
+<div style="white-space: pre;">Página &nbsp;
+    <input type="number" class="form-control ui-pg-input" maxlength="5"
+        [(ngModel)]="txtPage" [disabled]="countAll <= 0 || isDsb ? true : false" />&nbsp; de
+    <span id="sp_1_grid-pager">{{ pageMax }}</span><!-- (ngModelChange)="change($event)"  -->
+</div>
+<div class="ui-pg-btn-container disabled ui-grid-disablePointerEvents">
+    <div class="ui-separator ml-o375r"></div>
+</div>
+<div class="ui-pg-btn-container">
+    <button class="ui-pg-btn" [ngClass]="{'ui-pg-btn-h':!isDsbLast}" [disabled]="isDsbLast || isDsb ? true : false"
+        (click)="next()" title="Pagina Siguiente">
+        <img [src]="icoSrv.getIcon('page-next')">
+    </button>
+</div>
+<div class="ui-pg-btn-container">
+    <button class="ui-pg-btn" [ngClass]="{'ui-pg-btn-h':!isDsbLast}" [disabled]="isDsbLast || isDsb ? true : false"
+        (click)="last()"  title=" Ultima Página ">
+        <img [src]="icoSrv.getIcon('page-last')">
+    </button>
+</div>
+<div class="ui-pg-btn-container disabled ui-grid-disablePointerEvents">
+    <div class="ui-separator mr-o375r"></div>
+</div>
+<div class="ui-pg-btn-container" title=" Actualizar ">
+    <button class="ui-pg-btn ui-pg-btn-h" [ngClass]="{'ui-pg-btn-h':!isDsb}" [disabled]="isDsb" 
+        (click)="refreshGrd()">
+        <img [src]="icoSrv.getIcon('refresh')">
+    </button>
+</div>
+<div dir="rtl" class="w-100g" style="white-space: nowrap;">
+    <span class="ui-paging-info" [ngClass]="{'c-red': countAll <= 0, 'c-black': countAll > 0}">{{ pageInfo }}</span>
+</div>
+</div>

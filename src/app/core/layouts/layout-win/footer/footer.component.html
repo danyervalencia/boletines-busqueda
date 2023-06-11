@@ -1,0 +1,60 @@
+<!--<footer class="main-footer">-->
+<div style="display:flex; align-items: center;">
+    <a class="ml-o5r" href="#">
+        <img [src]="imgSrv.getIcon('logo-concytec-white', 'png')" style="width:150px;">
+    </a>
+</div>
+
+<div style="display:flex; align-items: center;">
+    <div style="padding-left: 1rem;">
+        <div style="line-height: 1;">
+            <label style="color: #fff; font-size: 10px;">Concejo Nacional de Ciencia, Tecnología e Innovación Tecnológica</label>
+        </div>
+        <div style="line-height: 1;">
+            <label style="color: #fff; font-size: 9px;">Calle Chinchon N° 867 - San Isidro</label>
+        </div>
+        <div style="line-height: 1;">
+            <label style="color: #fff; font-size: 9px;">Lima - Perú</label>
+        </div>
+        <div style="line-height: 1;">
+            <label style="color: #fff; font-size: 9px;">Central Telef. 0051-399-0030</label>
+        </div>
+        <div style="line-height: 1;">
+            <label style="color: #fff; font-size: 9px;">degc@concytec.gob.pe</label>
+        </div>
+    </div>
+</div>
+
+<div style="display:flex; align-items: center;">
+    <div style="width: 100%;">
+        <div style="line-height: 1; text-align: center;">
+            <label style="color: #fff; font-size: 11px; font-weight: bolder;">OBSERVATORIO CTI</label>
+        </div>
+        <div style="line-height: 1; text-align: center;">
+            <label style="color: #fff; font-size: 9px;">Preguntas Frecuentes</label>
+        </div>
+        <div style="line-height: 1; text-align: center;">
+            <label style="color: #fff; font-size: 9px; font-family:'sans-serif'; line-height: .8; cursor: pointer;" (click)="downUserManual();">Manual de Usuario</label>
+        </div>
+        <div style="line-height: 1;">
+            <label style="color: #fff; font-size: 9px;"></label>
+        </div>
+        <div style="line-height: 1;">
+            <label style="color: #fff; font-size: 9px;"></label>
+        </div>
+    </div>
+</div>
+
+<div style="display:flex; align-items: center;">
+    <div style="width: 100%;">
+        <div style="line-height: 1; text-align: center;">
+            <label style="color: #fff; font-size: 11px; font-weight: bolder; margin-bottom: 2px;">ULTIMOS BOLETINES</label>
+        </div>
+        <div class="ui-row" *ngFor="let _r of rootSrv.rows; let _i = index" style="width:100%; text-align: center;">
+            <label style="color: #fff; font-size: 9px; font-family:'sans-serif'; line-height: .8; cursor: pointer;" (click)="downPdf(_r.key, _r.nro, _r.yearId);">{{ this.formatNroYear(_r.nro, _r.yearId) }}</label>
+        </div>
+        <!--<div style="line-height: 1; text-align: center;">
+            <label style="color: #fff; font-size: 10px;">Términos de uso</label>
+        </div>-->
+    </div>
+</div>

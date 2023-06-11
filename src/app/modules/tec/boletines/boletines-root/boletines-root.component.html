@@ -1,0 +1,97 @@
+<form [formGroup]="formFilt" style="display:grid; grid-template-columns: 1fr; grid-template-rows: 24px auto 1fr; height: 100%;"><!--  style="height: 100%;" class="frm-filter"-->
+
+    <div style="background-color: #005470; display: grid; grid-template-columns: 1fr 1fr;">
+        <div>
+            <label style="color:#fff; font-size: 11px; padding-left: 32px; padding-top:4px;">INICIO / BOLETIN SEMANAL DE VIGILANCIA TECNOLOGICA</label>
+        </div>
+        
+        <div style="text-align: right;">
+            <div style="padding-right: 32px; ">
+                <label style="color:#fff; font-size: 11px; padding-top:4px; padding-right: 8px;">Regresar a Búsqueda </label>
+                <img style="cursor: pointer;" [src]="icoSrv.getIcon('undo')" (click)="goToSearch()"/>
+            </div>
+        </div>
+    </div>
+    <div [style.backgroundImage]="'url('+ imgSrv.getIcon('background-search', 'png') +')'" 
+        style="display:grid; grid-template-columns: 1fr 3fr; column-gap: 1.25rem; padding: 16px 32px;">
+        <div>
+            <div><label class="c-white fw-b" style="font-size: 16px; padding-bottom: 8px;">Boletín Semanal</label></div>
+            <div><label class="c-white fw-b" style="font-size: 20px; padding-bottom: 12px;">VIGILANCIA TECNOLOGICA</label></div>
+            <div><label class="c-white fw-b">Objetivo</label></div>
+            <div><label class="c-white" style="font-size: 10px;" #lblObjetivo></label></div>
+        </div>
+        <div style="text-align: right;">
+            <div><label class="c-white fw-b" style="font-size: 20px; padding-top:32px; padding-bottom: 8px;">{{ document }}</label></div>
+            <div><label class="c-white" style="font-size: 16px;">{{fecha | date:'longDate'}}</label></div>
+        </div>
+    </div>
+
+    <div id="bodycenter" style="display:grid; grid-template-columns: 1fr 3fr; grid-template-rows: 1fr; column-gap: 1.25rem; padding: 16px 32px;">
+        
+        <div class="pane-left">
+            <div style="height: 100px;">
+            <ul class="tabs tabs-default b-1" style="border:none;">
+                <li class="nav-item" style="margin-bottom:8px;">
+                    <a class="nav-link" [ngClass]="{'active' : modSrv.tabAct=='tab11'}" style="width: 100%; padding: 8px 16px; margin-right: 0!important;"
+                        (click)="fnTabActive('tab11')">NOTICIAS
+                    </a>
+                </li>
+                <li class="nav-item" style="margin-bottom:8px;">
+                    <a class="nav-link" [ngClass]="{'active' : modSrv.tabAct=='tab12'}" style="width: 100%; padding: 8px 16px; margin-right: 0!important;"
+                        (click)="fnTabActive('tab12')">PATENTES
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+        <div class="pane-right"><!--style="height: calc(100vh - (320px)); display: flex;"-->
+            <div style="height: calc(100vh - (340px));"><!-- display: flex;-->
+                <div  [hidden]="modSrv.tabAct!='tab11'">
+                    <div class="accordion-wrapper">
+                        <div class="ui-row" *ngFor="let _r of rootSrv.rows; let _i = index" style="width:100%; position: relative;">
+                            <div class="accordion" *ngIf="(_r.seccion.id == 11)">
+                                <input type="radio" name="radio-a" [id]="_i" class="inputRadio" checked *ngIf="(_r.item == item) && (_r.seccion.id == tipseccId)">
+                                <input type="radio" name="radio-a" [id]="_i" class="inputRadio" *ngIf="(_r.item != item) || (_r.seccion.id != tipseccId)">
+                                <label class="accordion-label" [for]="_i">{{_r.item}}. {{_r.titulo}}</label>
+                                <div class="accordion-content">
+                                    <label style="text-align: justify;">{{_r.resumen}}</label>
+                                    <label style="margin-top: 16px;">Para mayor información ingrese al siguiente enlace:</label>
+                                    <div>
+                                        <a [routerLink]="" (click)="goToLink(_r.url)" style="text-decoration: underline">{{_r.url}}</a>
+                                    </div>
+                                    <label class="fw-b" style="margin-top: 16px; color:#005470">Referencia:</label>
+                                    <label style="text-align: justify;">{{_r.referencia}}</label>
+    
+                                    <label class="fw-b" style="margin-top: 16px; color:#005470">Fuente: <span class="fw-n">{{_r.fuente}}</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div  [hidden]="modSrv.tabAct!='tab12'">
+                    <div class="accordion-wrapper">
+                        <div class="ui-row" *ngFor="let _r of rootSrv.rows; let _i = index" style="width:100%; ">
+                            <div class="accordion" *ngIf="(_r.seccion.id == 12)">
+                                <input type="radio" name="radio-a" [id]="_i" class="inputRadio" checked *ngIf="(_r.item == item) && (_r.seccion.id == tipseccId)">
+                                <input type="radio" name="radio-a" [id]="_i" class="inputRadio" *ngIf="(_r.item != item) || (_r.seccion.id != tipseccId)">
+                                <label class="accordion-label" [for]="_i">{{_r.item}}. {{_r.titulo}}</label>
+                                <div class="accordion-content">
+                                    <label style="text-align: justify;">{{_r.resumen}}</label>
+                                    <label style="margin-top: 16px;">Para mayor información ingrese al siguiente enlace:</label>
+                                    <div>
+                                        <a [routerLink]="" (click)="goToLink(_r.url)" style="text-decoration: underline">{{_r.url}}</a>
+                                    </div>
+                                    <label class="fw-b" style="margin-top: 16px; color:#005470">Referencia:</label>
+                                    <label style="text-align: justify;">{{_r.referencia}}</label>
+    
+                                    <label class="fw-b" style="margin-top: 16px; color:#005470">Fuente: <span class="fw-n">{{_r.fuente}}</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

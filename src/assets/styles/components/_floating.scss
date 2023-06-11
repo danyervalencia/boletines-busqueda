@@ -1,0 +1,57 @@
+.floating {
+  position: relative;
+
+  .floating-label {
+    background-color: #fff;
+    color: $color-placeholder;
+    padding: {
+      left: .25rem;
+      right: .25rem;
+    }
+    pointer-events: none;
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transition: all .15s;
+
+    @media (prefers-reduced-motion:reduce) {
+      transition: none  
+    }
+  }
+}
+
+/*@media (prefers-reduced-motion:reduce) {
+  .floating .floating-label {
+    transition: none
+  }
+}*/
+
+/*.input-floating-label .floating-label.active,
+.input-floating-label input.has-content~.floating-label,
+.input-floating-label input:focus~.floating-label,
+.input-floating-label select.has-content~.floating-label,
+.input-floating-label select:focus~.floating-label {
+  top: 0;
+  font-size: 100%;
+  opacity: .85
+}*/
+
+/*.input-floating-label[class*=c-] input:focus~.floating-label {
+  color: inherit !important;
+  opacity: .95
+}
+
+.input-floating-label[class*=bc-] input:focus {
+  border-color: inherit
+}
+
+.input-floating-label[class*=c-] select:focus~.floating-label {
+  color: inherit !important;
+  opacity: .95
+}
+
+/*.input-floating-label[class*=bc-] select:focus {
+  border-color: inherit
+}*/

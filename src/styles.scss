@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+::-webkit-calendar-picker-indicator { 
+    background-image: url(./assets/images/icons/date.png);
+    margin: 0;
+}
+  
+input[type=checkbox]:checked {
+    background-image: url(./assets/images/icons/check.png);
+    background-size: 65%;
+}

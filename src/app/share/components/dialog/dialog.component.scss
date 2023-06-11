@@ -1,0 +1,15 @@
+.mainx {
+  background: #fff;
+  padding: .5rem .75rem .5rem .5rem;
+  display: grid;
+  grid-template-columns: 36px 1fr; 
+  grid-template-rows: minmax(50px, max-content); 
+  gap: .5rem;
+  align-items: center;   
+  justify-items: center;
+}
+
+.win {
+  height: auto;
+  width: 400px;
+}

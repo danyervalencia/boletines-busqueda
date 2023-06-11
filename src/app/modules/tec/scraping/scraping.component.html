@@ -1,0 +1,31 @@
+<div class="tabs-container">
+    <ul class="tabs tabs-default b-1">
+        <li class="nav-item">
+            <a class="nav-link active"data-toggle="tab" aria-selected="true"> {{ modSrv.title }} </a>
+        </li>
+    </ul>
+    
+    <div class="tab-content">
+    <div class="tab-pane active">
+    <div class="pane-two flex-1-0-100g" style="grid-template-columns: 1fr!important;">
+            
+        <app-scraping-root class="d-grid-fr"></app-scraping-root> <!-- [tab1]="tabC1"-->
+        
+        <!--<div class="pane-g1e">
+        <div class="tabs-container">
+            <ul class="tabs tabs-default b-1">
+                <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active' : modSrv.tabAct=='tab1'}"
+                        (click)="fnTabActive('tab1')">Contenido
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <app-fuentes-tab1 #tabC1 class="d-grid-fr" [hidden]="modSrv.tabAct!='tab1'"></app-fuentes-tab1>
+            </div>
+        </div>
+        </div>-->
+    </div>
+    </div>
+    </div>
+</div>

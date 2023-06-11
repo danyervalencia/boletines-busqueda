@@ -1,0 +1,6 @@
+@mixin separator($color: $separator-color, $margin-y: $separator-margin-y) {
+  border-top: 1px solid $color;
+  height: 0;
+  margin: $margin-y 0;
+  overflow: hidden;
+}

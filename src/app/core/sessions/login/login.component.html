@@ -1,0 +1,53 @@
+<div class="login-container">
+<aside class="main-aside">
+    <article class="d-flex fd-column px-1o5r py-2r" style="background-color: #eee;">
+        <!--style="background-image: url(../../../../../assets/images/background-network.jpg);"-->
+        <div class="ta-center">
+            <!--<img [src]="imgLogo" style="width: 260px;" />-->
+            <img [src]="icoSrv.getImag('logo-portal')" style="width: 260px;" />
+        </div>
+        <!--<p class="c-logo ta-center fs-120g b-b-1 mt-o75r">Gestión de Procesos Institucional</p>-->
+        <a href="#" class="text d-inline-block mt-1o5r">
+            <img [src]="icoSrv.getIcon('pdf','gif')" class="mr-2" />
+            <span class="va-middle pl-o25r">Manual de Usuario</span>
+        </a>
+        <a href="#" class="text d-inline-block mt-o75r">
+            <img [src]="icoSrv.getIcon('phone')" class="mr-2" />
+            <span class="va-middle pl-o25r">978989933 - 953688523</span>
+        </a>
+        <div class="ta-center mt-2r">Copy Right &copy; 2022</div>
+    </article>
+</aside>
+<main class="main px-2r pt-2r pb-2r">
+    <form [formGroup]="frmLogin" class="d-grid" style="grid-template-columns: minmax(200px, 1fr); gap: .875rem;">
+        <div class="ta-center d-none"><img [src]="icoSrv.getImag('background-network', 'jpg')" /></div>
+        <p class="c-logo ta-center fs-110g d-none">
+            Sistema Integrado de Gestión Administrativa
+        </p>
+        <p class="b-b-1 fs-120g bc-gray">Bienvenido</p>
+        <div class="floating d-flex">
+            <input type="text" class="form-control form-control-lg" formControlName="email"
+                    maxlength=50 required />
+            <img [src]="icoSrv.getIcon('user_photo')" class="img-control-lg ml-n1o5r" />
+            <label class="floating-label ml-n1r">E-mail</label>
+        </div>
+        <!--<div class="floating d-flex">
+            <select class="form-control form-control-lg" formControlName="credacce_key" required>
+                <option *ngFor="let _r of jCredAcce; let _i = index" [value]="_r.credacce_key">
+                    {{ _r.unieje_areaabrev }}</option>
+            </select>
+            <label class="floating-label ml-n1r">Unidad Orgánica</label>
+        </div>-->
+        <div class="floating d-flex">
+            <input type="password" class="form-control form-control-lg" formControlName="password" autocomplete="off"
+                maxlength="20" required />
+            <img [src]="icoSrv.getIcon('key')" class="img-control-lg ml-n1o5r" />
+            <label class="floating-label c-grey-l1 ml-n1r">Contraseña</label>
+        </div>
+    </form>
+    <a class="ta-right pt-o375r" href="#">¿Olvide mi Contraseña?</a>
+    <button class="btn btn-ui w-100g fw-b" [disabled]="frmLogin.invalid?true:false" (click)="authenticate()"><span
+        class="va-middle pr-o5r ml-2r">INGRESAR AL SISTEMA</span><img [src]="icoSrv.getIcon('user-go')" /></button>
+    <app-spinner [spnName]="'spnLogin'" [message]="'Validando Datos'"></app-spinner>
+</main>
+</div>

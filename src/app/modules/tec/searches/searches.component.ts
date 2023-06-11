@@ -1,0 +1,22 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ModuleService } from '../../../services/module.service';
+
+@Component({
+  	selector: 'app-searches',
+  	templateUrl: './searches.component.html',
+  	styleUrls: ['./searches.component.scss']
+})
+export class SearchesComponent implements OnInit {
+	constructor(private route: ActivatedRoute, public modSrv: ModuleService) { 
+    	//let _menu = this.route.snapshot.paramMap.get('key'); 
+    	this.modSrv.title = "Búsqueda de Información en Boletines";
+	}
+
+	ngOnInit(): void {
+	}
+
+	fnTabActive(tab:any){
+		this.modSrv.tabAct = tab;
+	}
+}

@@ -1,0 +1,14 @@
+.pane-left {
+    background-color: #fff;
+    display: grid; 
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); 
+    overflow-y: auto;
+}
+.pane-right {
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+    overflow: auto;
+    //border-top: 1px solid #99bce8;
+}

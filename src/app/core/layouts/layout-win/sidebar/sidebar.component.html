@@ -1,0 +1,584 @@
+<div class="sidebar">
+<div class="c-white"></div>
+<div class="sidebar-content">
+<ul class="menu">
+    <li class="panel active" id="4000011">
+        <div class="panel-header">
+            <!--<span class="header-text">Operaciones</span>-->
+            <!--<span class="header-icon" (click)="panelExpand($event)"></span>-->
+            <div class="header-text"><label>Observatorio</label></div>
+            <img [src]="icoSrv.getIcon('minus')" class="header-icon" (click)="panelExpand($event)"/>
+        </div>
+        <div class="panel-content show">
+        <table class="ui-tree">
+        <tbody class="ofx-auto">
+            <!--<tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <div class="ui-tree-node-text"><label>Gestión Documentos</label></div>
+                </td>
+            </tr>-->
+            <!--<tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/ad425a19', '4110020']">
+                        <div class="ui-tree-node-text"><label>Notas Presupuestales</label></div>
+                    </a>
+                </td>
+            </tr>-->
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/ea1cb00e', '5150020']">
+                        <div class="ui-tree-node-text"><label>Fuentes</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/66b9cc4f', '5150030']">
+                        <div class="ui-tree-node-text"><label>Scraping</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/b58a2386', '5150040']">
+                        <div class="ui-tree-node-text"><label>Boletines</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/56d25a65', '5150060']">
+                        <div class="ui-tree-node-text"><label>Busquedas</label></div>
+                    </a>
+                </td>
+            </tr>
+            <!--<tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <div class="ui-tree-node-text"><label>Viáticos</label></div>
+                </td>
+            </tr>-->
+            <!--<tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <div class="ui-tree-node-text"><label>Vales Combustible</label></div>
+                </td>
+            </tr>-->
+            <!--<tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch-end')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/982c2a7b', '4110100']">
+                        <div class="ui-tree-node-text"><label>Marco Ejecución SIAF</label></div>
+                    </a>
+                </td>
+            </tr>-->
+        </tbody>
+        </table>
+        </div>
+    </li>
+
+    <!--<li class="panel" id="1000">
+        <div class="panel-header">
+            <div class="header-text"><label>Presupuesto</label></div>
+            <img [src]="icoSrv.getIcon('plus')" class="header-icon" (click)="panelExpand($event)"/>
+        </div>
+        <div class="panel-content">
+        <table class="ui-tree">
+        <tbody class="ofx-auto">
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/f856f01a','4120010']">
+                        <div class="ui-tree-node-text"><label>Clasificadores</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/e2cb244f', '4120100']">
+                        <div class="ui-tree-node-text"><label>Proyectos</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/32f08946', '4120110']">
+                        <div class="ui-tree-node-text"><label>Secuencias Funcionales</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/f07a46c0', '4120120']">
+                        <div class="ui-tree-node-text"><label>Tareas Funcionales</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/24f78e94', '4120130']">
+                        <div class="ui-tree-node-text"><label>Notas Presupuestales</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row" id="1500" data-expand="0" data-branch="0">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch-plus-end')" (click)="folderClick($event)"/>
+                    <img [src]="icoSrv.getIcon('folder')" (click)="folderClick($event)"/>
+                    <span class="ui-tree-icon-branch-plus-end expand-coll" (click)="folderClick($event)"></span>
+                    <span class="ui-tree-icon-folder expand-coll" (click)="folderClick($event)"></span>
+                    <div class="ui-tree-node-text"><label>SIAF</label></div>
+                </td>
+            </tr>
+            <tr class="ui-row ui-tree-sub" data-parent="1500">
+                <td class="ui-grid-cell-tree">
+                    <span class="ui-tree-icon-branch-empty"></span>
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <div class="ui-tree-node-text"><label>Notas Presupuestales</label></div>
+                </td>
+            </tr>
+            <tr class="ui-row ui-tree-sub" data-parent="1500">
+                <td class="ui-grid-cell-tree">
+                    <span class="ui-tree-icon-branch-empty"></span>
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <div class="ui-tree-node-text"><label>Certificaciones</label></div>
+                </td>
+            </tr>
+            <tr class="ui-row ui-tree-sub" data-parent="1500" role="row">
+                <td class="ui-grid-cell-tree">
+                    <span class="ui-tree-icon-branch-empty"></span>
+                    <img [src]="icoSrv.getIcoG('branch-end')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/expedientes', '4121040']">
+                        <div class="ui-tree-node-text"><label>Expedientes</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row ui-tree-sub" data-parent="1500" role="row">
+                <td class="ui-grid-cell-tree">
+                    <span class="ui-tree-icon-branch-empty"></span>
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/efddeaf6', '4121060']">
+                        <div class="ui-tree-node-text"><label>Marco - Ejecución</label></div>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+    </li>-->
+
+      <!--<li class="panel" id="7000">
+        <div class="panel-header">
+          <span class="header-text">Tesorería</span>
+          <span class="header-icon expand" (click)="panelExpand($event)"></span>
+        </div>
+        <div class="panel-content">
+          <table class="ui-tree">
+            <tbody class="ofx-auto">
+              <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                  <img [src]="icoSrv.getIcoG('branch')"/>
+                  <img [src]="icoSrv.getIcon('leaf')"/>
+                  <a [routerLink]="['/fa4820e9', '4130010']">
+                    <div class="ui-tree-node-text"><label>Documentos Gestión</label></div>
+                  </a>
+                </td>
+              </tr>
+              <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                  <img [src]="icoSrv.getIcoG('branch')"/>
+                  <img [src]="icoSrv.getIcon('leaf')"/>
+                  <a [routerLink]="['/67b17b43', '4130040']">
+                    <div class="ui-tree-node-text"><label>Conceptos Ingreso</label></div>
+                  </a>
+                </td>
+              </tr>
+              <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                  <img [src]="icoSrv.getIcoG('branch')"/>
+                  <img [src]="icoSrv.getIcon('leaf')"/>
+                  <a [routerLink]="['/fa4820e9', '4130080']">
+                    <div class="ui-tree-node-text"><label>Operaciones Caja</label></div>
+                  </a>
+                </td>
+              </tr>
+              <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                  <img [src]="icoSrv.getIcoG('branch')"/>
+                  <img [src]="icoSrv.getIcon('leaf')"/>
+                  <a [routerLink]="['/fa4820e9', '4130090']">
+                    <div class="ui-tree-node-text"><label>Documentos Ingreso</label></div>
+                  </a>
+                </td>
+              </tr>
+              <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                  <img [src]="icoSrv.getIcoG('branch')"/>
+                  <img [src]="icoSrv.getIcon('leaf')"/>
+                  <a [routerLink]="['/fa4820e9', '4130100']">
+                    <div class="ui-tree-node-text"><label>Historial Pagos</label></div>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </li>-->
+
+    <!--<li class="panel" id="2000">
+        <div class="panel-header">
+            <div class="header-text"><label>Logística</label></div>
+            <img [src]="icoSrv.getIcon('plus')" (click)="panelExpand($event)"/>
+        </div>
+        <div class="panel-content">
+        <table class="ui-tree">
+        <tbody class="ofx-auto">
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/ca10f57b', '4140010']">
+                        <div class="ui-tree-node-text"><label>Proveedores</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/f7aec3d6', '4140020']">
+                        <div class="ui-tree-node-text"><label>Control Pedidos</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/08111d18', '4140040']">
+                        <div class="ui-tree-node-text"><label>Cotizaciones</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/9f58f608', '4140060']">
+                        <div class="ui-tree-node-text"><label>Ordenes</label></div>
+                    </a>
+                </td>
+            </tr>
+            <!--<tr class="ui-row" id="2500" data-expand="0" data-branch="0">
+                <td class="ui-grid-cell-tree">
+                    <span class="ui-tree-icon-branch-plus-end expand-coll" (click)="folderClick($event)"></span>
+                    <span class="ui-tree-icon-folder expand-coll" (click)="folderClick($event)"></span>
+                    <div class="ui-tree-node-text"><label>Almacen</label></div>
+                </td>
+            </tr>
+            <tr class="ui-row ui-tree-sub" data-parent="2500">
+                <td class="ui-grid-cell-tree">
+                    <span class="ui-tree-icon-branch-empty"></span>
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <div class="ui-tree-node-text"><label>Recepcion de Bienes</label></div>
+                </td>
+            </tr>
+            <tr class="ui-row ui-tree-sub" data-parent="2500">
+                <td class="ui-grid-cell-tree">
+                    <span class="ui-tree-icon-branch-empty"></span>
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <div class="ui-tree-node-text"><label>Salida de Bienes</label></div>
+                </td>
+            </tr>
+            <tr class="ui-row ui-tree-sub" data-parent="2500">
+                <td class="ui-grid-cell-tree">
+                    <span class="ui-tree-icon-branch-empty"></span>
+                    <img [src]="icoSrv.getIcoG('branch-end')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <div class="ui-tree-node-text"><label>Notas de Entrada</label></div>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+    </li>-->
+
+    <li class="panel" id="7000">
+        <div class="panel-header">
+            <div class="header-text"><label>Mantenimiento</label></div>
+            <img [src]="icoSrv.getIcon('plus')" (click)="panelExpand($event)"/>
+        </div>
+        <div class="panel-content">
+        <table class="ui-tree">
+        <tbody class="ofx-auto">
+            <!--<tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <div class="ui-tree-node-text"><label>Registro de Identidad</label></div>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <div class="ui-tree-node-text"><label>Registro Proveedores / Clientes</label></div>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <span class="ui-tree-node-text">Módulos de Aplicación</span>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/c4a7360f', '4510020']">
+                        <div class="ui-tree-node-text"><label>Registro de Clases</label></div>
+                    </a>
+                </td>
+            </tr>-->
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/c4a7360f', '4510030']">
+                        <div class="ui-tree-node-text"><label>Parametros</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/c4a7360f', '4510040']">
+                        <div class="ui-tree-node-text"><label>Catálogo Bienes y Servicios</label></div>
+                    </a>
+                </td>
+            </tr>
+            <!--<tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <span class="ui-tree-node-text">Vehículos</span>
+                </td>
+            </tr>-->
+        </tbody>
+        </table>
+        </div>
+    </li>
+    <!--
+    <li class="panel" id="8000">
+        <div class="panel-header">
+          <div class="header-text"><label>Herbario</label></div>
+          <img [src]="icoSrv.getIcoG('plus')" (click)="panelExpand($event)"/>
+        </div>
+        <div class="panel-content">
+          <table class="ui-tree">
+            <tbody class="ofx-auto">
+              <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                  <img [src]="icoSrv.getIcoG('branch')"/>
+                  <img [src]="icoSrv.getIcon('leaf')"/>
+                  <a [routerLink]="['/d690cee1', '6110010']">
+                    <div class="ui-tree-node-text"><label>Familias</label></div>
+                  </a>
+                </td>
+              </tr>
+              <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                  <img [src]="icoSrv.getIcoG('branch')"/>
+                  <img [src]="icoSrv.getIcon('leaf')"/>
+                  <a [routerLink]="['/areas', '6110020']">
+                    <div class="ui-tree-node-text"><label>Géneros</label></div>
+                  </a>
+                </td>
+              </tr>
+              <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                  <img [src]="icoSrv.getIcoG('branch')"/>
+                  <img [src]="icoSrv.getIcon('leaf')"/>
+                  <a [routerLink]="['/e056f99a', '6110030']">
+                    <div class="ui-tree-node-text"><label>Especies</label></div>
+                  </a>
+                </td>
+              </tr>
+              <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                  <img [src]="icoSrv.getIcoG('branch-end')"/>
+                  <img [src]="icoSrv.getIcon('leaf')"/>
+                  <a [routerLink]="['/e056f99a', '6110040']">
+                    <div class="ui-tree-node-text"><label>Colecciones</label></div>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </li>-->
+
+    <li class="panel" id="6000">
+        <div class="panel-header">
+            <div class="header-text"><label>Reportes</label></div>
+            <img [src]="icoSrv.getIcon('plus')" (click)="panelExpand($event)"/>
+        </div>
+        <div class="panel-content">
+        <table class="ui-tree">
+        <tbody class="ofx-auto">
+            <tr class="ui-row" id="6010" data-expand="0" data-branch="0">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch-plus-end')" (click)="folderClick($event)"/>
+                    <img [src]="icoSrv.getIcon('folder')" (click)="folderClick($event)"/>
+                    <!--<span class="ui-tree-icon-branch-plus-end expand-coll" (click)="folderClick($event)"></span>
+                    <span class="ui-tree-icon-folder expand-coll" (click)="folderClick($event)"></span>-->
+                    <div class="ui-tree-node-text"><label>Observatorio</label></div>
+                </td>
+            </tr>
+            <tr class="ui-row ui-tree-sub" data-parent="6010">
+                <td class="ui-grid-cell-tree">
+                    <span class="ui-tree-icon-branch-empty"></span>
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/76af65f7', '8412103']">
+                        <div class="ui-tree-node-text"><label>Boletines</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row ui-tree-sub" data-parent="6010">
+                <td class="ui-grid-cell-tree">
+                    <span class="ui-tree-icon-branch-empty"></span>
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/af26ee48', '8412104']">
+                        <div class="ui-tree-node-text"><label>Búsquedas</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row ui-tree-sub" data-parent="6010">
+                <td class="ui-grid-cell-tree">
+                    <span class="ui-tree-icon-branch-empty"></span>
+                    <img [src]="icoSrv.getIcoG('branch-end')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/086d64c0', '8412106']">
+                        <div class="ui-tree-node-text"><label>Fuentes</label></div>
+                    </a>
+                </td>
+            </tr>
+            <!--<tr class="ui-row ui-tree-sub" data-parent="6010">
+                <td class="ui-grid-cell-tree">
+                    <span class="ui-tree-icon-branch-empty"></span>
+                    <img [src]="icoSrv.getIcoG('branch-end')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/23693d14', '8412120']">
+                        <div class="ui-tree-node-text"><label>Liquidaciones</label></div>
+                    </a>
+                </td>
+            </tr>-->
+            <tr class="ui-row" id="6020" data-expand="0" data-branch="0">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch-plus-end')" (click)="folderClick($event)"/>
+                    <img [src]="icoSrv.getIcon('folder')" (click)="folderClick($event)"/>
+                    <div class="ui-tree-node-text"><label>Estadísticos</label></div>
+                </td>
+            </tr>
+            <!--<tr class="ui-row" id="6020" data-expand="0" data-branch="0">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch-plus-end')" (click)="folderClick($event)"/>
+                    <img [src]="icoSrv.getIcon('folder')" (click)="folderClick($event)"/>
+                    <div class="ui-tree-node-text"><label>Tesorería</label></div>
+                </td>
+            </tr>-->
+        </tbody>
+        </table>
+        </div>
+    </li>
+
+    <li class="panel" id="9000">
+        <div class="panel-header">
+            <!--<span class="header-text">Accesos</span>
+            <span class="header-icon expand" (click)="panelExpand($event)"></span>-->
+            <div class="header-text"><label>Accesos</label></div>
+            <img [src]="icoSrv.getIcon('plus')" (click)="panelExpand($event)"/>
+        </div>
+        <div class="panel-content">
+        <table class="ui-tree">
+        <tbody class="ofx-auto">
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/4a06b70c', '1110020']">
+                        <div class="ui-tree-node-text"><label>Unidades Orgánicas</label></div>
+                    </a>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <a [routerLink]="['/b247c789', '1110010']">
+                        <div class="ui-tree-node-text"><label>Registro de Usuarios</label></div>
+                    </a>
+                </td>
+            </tr>
+            <!--<tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <div class="ui-tree-node-text"><label>Módulos de Aplicación</label></div>
+                </td>
+            </tr>-->
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <div class="ui-tree-node-text"><label>Modificar Clave 1</label></div>
+                </td>
+            </tr>
+            <tr class="ui-row">
+                <td class="ui-grid-cell-tree">
+                    <img [src]="icoSrv.getIcoG('branch-end')"/>
+                    <img [src]="icoSrv.getIcon('leaf')"/>
+                    <div class="ui-tree-node-text"><label>Modificar Clave 2</label></div>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+    </li>
+</ul>
+</div>
+</div>

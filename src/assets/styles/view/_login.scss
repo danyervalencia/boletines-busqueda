@@ -1,0 +1,39 @@
+.login-container {
+  border-radius: 20px solid !important;
+  display: grid;
+  grid-template: {
+    columns: minmax(350px,auto) minmax(320px,auto);
+    rows: auto;
+    areas: "asi mai";
+  }
+  justify-content: center;
+}
+
+@media(max-width: 700px) {
+  .login-container {
+    grid-template: {
+      columns: minmax(300px,auto);
+      rows: auto auto;
+      areas: 
+        "mai"
+        "asi";
+    }
+  }
+
+  .main-aside .c-logo {
+    display: none
+  }
+  .main-aside article {
+    padding: {
+      bottom: 1.5rem;
+      left: 3rem;
+      top: 0;
+    }
+  }
+  main{
+    padding-bottom: 3rem
+  }
+  main .c-logo {
+    display: block
+  }
+}

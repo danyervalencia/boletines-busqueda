@@ -1,0 +1,102 @@
+.pane-buttons {
+  background: var(--bgc-panel);
+  display: flex;
+  padding: .375rem;
+  overflow-x: auto;
+}
+
+.pane-configrep {
+  background: var(--bgc-panel);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: .5rem;
+  display: grid;
+  gap: 4px;
+}
+
+.pane-filter {
+  background: var(--bgc-panel);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: .5rem .125rem .25rem;
+  display: grid;
+  gap: 4px;
+
+  label {
+    margin-bottom: .125rem;
+    margin-left: .125rem;
+  }
+
+  &.pt0{
+    padding-top: 0;
+  }
+}
+
+/*.pane-filter input,select {
+  width: 100%;
+}*/
+
+.pane-fgb {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content 1fr max-content;
+}
+
+.pane-g1e {
+  background-color: $white;
+  overflow: hidden;
+  display: grid;
+  grid-template: {
+    columns: 1fr;
+    rows: 1fr;
+  }
+}
+
+.pane-grid {
+  overflow: hidden;
+  display: grid;
+  grid-template: {
+    columns: 1fr;
+    rows: 1fr;
+  }
+}
+
+.pane-two {
+  background: var(--bgc-system);
+  display: grid;
+  grid-template: {
+    columns: 52% 1fr;
+    rows: 1fr;
+  }
+  gap: 4px;
+}
+
+.pane-wfgb {
+  overflow: hidden;
+  display: grid;
+  grid-template: {
+    columns: 1fr;
+    rows: min-content min-content 1fr min-content;
+  }
+}
+
+.pane-win {
+  background: var(--bgc-panel);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: .25rem .25rem;
+  display: grid;
+
+  label {
+    color: #8b0000;
+    cursor: default;
+    line-height: 14px;
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+  
+  .label {
+    font-weight: bolder;
+  }  
+}

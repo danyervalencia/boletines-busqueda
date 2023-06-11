@@ -1,0 +1,106 @@
+<form [formGroup]="formFilt" style="display:grid; grid-template-columns: 1fr; grid-template-rows: 24px auto 1fr; height: 100%;"><!--  style="height: 100%;" class="frm-filter"-->
+
+    <div style="background-color: #005470; display: grid; grid-template-columns: 1fr 1fr;">
+        <div>
+            <label style="color:#fff; font-size: 11px; padding-left: 32px; padding-top:4px;">INICIO / BUSQUEDA DE BOLETINES</label>    
+        </div>
+        <div style="text-align: right;">
+        </div>
+    </div>
+    <div [style.backgroundImage]="'url('+ imgSrv.getIcon('background-search', 'png') +')'" 
+        style="display:grid; grid-template-columns: 1fr 3fr; column-gap: 1.25rem; padding: 16px 32px;">
+        <div>
+            <label class="c-white fw-b" style="font-size: 20px;">Búsqueda avanzada de Boletines</label>
+            <label class="c-white" style="font-size: 9px; line-height: 12px;">En este portal podrás realizar las búsquedas que requieras
+                en los boletines relacionados a Ciencia, Tecnología e Innovación (CTI).</label>
+        </div>
+        <div>
+            <label class="c-white label-top">Criterio de Búsqueda</label>
+            <div class="floating d-flex">
+                <input type="text" class="form-control" formControlName="texto" style="width: 70%;"
+                    (change)="grdClean()" (keyup.enter)="filtersEnter()"/>
+                <img [src]="icoSrv.getIcon('search')" class="img-control-lg ml-n1o5r" style="cursor: pointer;" (click)="grdRefresh(1);"/>
+            </div>
+        </div>
+    </div>
+    <div style="display:grid; grid-template-columns: 1fr 3fr; grid-template-rows: 1fr 32px; column-gap: 1.25rem; padding: 16px 32px;">
+        <div class="pane-left" style="grid-row: 1 / span 2;"><!--style="height: 450px; overflow: hidden;"-->
+            <div style="height: 100px;">
+                <div class="c-light-blue fw-b" style="font-size: 14px; padding: 0 0 8px 8px;">Filtros Complementarios</div>
+                
+                <div class="bgc-light-gray" style="padding: 4px 8px;">Año de Publicación</div>
+                <div class="d-grid" style="grid-template-columns: 1fr 1fr 1fr; column-gap: .75rem; row-gap: .5rem; padding: 8px 8px;">
+                    <label class="label-left">Desde / Hasta</label>
+                    <select class="form-control" formControlName="yearIni" (change)="yearChange()">
+                        <option value="" selected></option>
+                        <option *ngFor="let _r of jYear;" [value]="_r.id">{{ _r.code }}</option>
+                    </select>
+                    <select class="form-control" formControlName="yearFin" (change)="yearChange()">
+                        <option value="" selected></option>
+                        <option *ngFor="let _r of jYear;" [value]="_r.id">{{ _r.code }}</option>
+                    </select>
+                </div>
+
+                <div class="bgc-light-gray" style="padding: 4px 8px;">Numero de Publicación</div>
+                <div class="d-grid" style="grid-template-columns: 1fr 1fr 1fr; column-gap: .75rem; row-gap: .5rem; padding: 8px 8px;">
+                    <label class="label-left">Desde / Hasta</label>
+                    <input type="text" class="form-control" formControlName="nroIni" numeric maxlength="5"
+                        (change)="grdClean()" (keyup.enter)="filtersEnter()"/>
+                    <input type="text" class="form-control" formControlName="nroFin" numeric maxlength="5"
+                        (change)="grdClean()" (keyup.enter)="filtersEnter()"/>
+                </div>
+
+                <div class="bgc-light-gray" style="padding: 4px 8px;">Fecha de Publicación</div>
+                <div class="d-grid" style="grid-template-columns: 1fr 2fr; column-gap: .75rem; row-gap: .5rem; padding: 8px 8px;">
+                    <label class="label-left">Fecha Inicial</label>
+                    <input type="date" class="form-control" formControlName="dateIni" (change)="grdClean()">
+                    <label class="label-left">Fecha Final</label>
+                    <input type="date" class="form-control" formControlName="dateFin" (change)="grdClean()">
+                </div>
+
+                <div class="c-light-blue fw-b" style="font-size: 14px; padding: 8px 0 4px 8px;">Configuraciones</div>
+                <div class="d-grid" style="grid-template-columns: 1fr 2fr; column-gap: .75rem; row-gap: .5rem; padding: 8px 8px;">
+                    <label class="label-left">Ordenar por</label>
+                    <select class="form-control" formControlName="orderBy" (change)="grdClean()">
+                        <option value="fecha" selected>FECHA PUBLICACION</option>
+                        <option value="nro">NRO BOLETIN</option>
+                    </select>
+                    <label class="label-left">Tipo Orden</label>
+                    <select class="form-control" formControlName="orderType" (change)="grdClean()">
+                        <option value="asc" selected>ASCENDENTE</option>
+                        <option value="desc">DESCENDENTE</option>
+                    </select>
+                    <label class="label-left">Nro. resultado</label>
+                    <select class="form-control" formControlName="recordLimit" (change)="changeLimit(); grdClean(1);">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50" selected>50</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="pane-right">
+            <div style="height: 100px;">
+            <!--<div  style="height: 405px; overflow: auto; padding-left: 8px; padding-right: 8px;">-->
+                <div class="ui-row" *ngFor="let _r of rootSrv.rows; let _i = index" style="width:100%; margin-bottom: 8px; padding-top:8px; padding-bottom: 8px; border-top:1px solid rgba(0, 84, 112);">
+                    <div  class="fw-b" style="color:#005470">{{ _i + 1 }}. {{ _r.document }} &nbsp; &nbsp; <span style="font-size: 10px; color:#000; font-weight: normal;">{{ _r.fecha | date:'mediumDate'}}</span></div>
+                    <div [innerHTML]="_r.titulo" style="color:#4ac1e0; padding-top: 4px; padding-bottom: 4px;"></div>
+                    <div [innerHTML]="_r.resumen" style="text-align: justify;"></div>
+                    <div style="padding-top:6px; padding-bottom:24px;"><a [routerLink]="" (click)="goToLink(_r.url);" style="cursor: pointer; color: #0568C3; text-decoration: underline;">{{ _r.url }}</a></div>
+                        <div style="text-align: right; padding-right: 8px;">
+                            <button style="border-color: #4ac1e0; background-color: #4ac1e0; color:#fff" (click)="downPdf(_r.key, _r.nro, _r.year_id);"> Descargar </button>&nbsp;
+                            <button style="border-color: #4ac1e0; background-color: #4ac1e0; color:#fff" (click)="viewPage(_r.key, _r.tipsecc_id, _r.item);"> Visualizar </button>
+                        </div>
+                </div>
+                <app-spinner [spnName]="'spnTBD'"></app-spinner>
+            <!--</div>-->
+            </div>
+        </div>
+        <div class="ui-grid">
+            <app-pager [countAll]="rootSrv.countAll" [countPage]="rootSrv.countPage" [recordLimit]="rootSrv.recordLimit" (fnRefresh)="grdRefresh($event);"></app-pager>
+        </div>
+
+    </div>
+</form>

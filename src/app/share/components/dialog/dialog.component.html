@@ -1,0 +1,28 @@
+<div class="ui-modal" *ngIf="open">
+<div class="content">
+<div class="win">
+    <div class="header">
+        <div style="display: inline-block; padding-top: 2px">
+            <label>{{ headTitle }}</label>
+        </div>
+        <!--<span (click)="fnCancel()">X</span>-->
+    </div>
+
+    <div class="mainx">
+        <div>
+            <img src = '{{ rutaUrl }}'>
+        </div>
+        <div class="ta-center">
+            {{ info }}
+        </div>
+    </div>
+  
+    <div class="footer">
+        <button class="btn btn-ui" (click)="fnCancel()">
+            <img [src]="icoSrv.getIcon('cancel')"/><span>Cancelar</span></button>
+        <button class="btn btn-ui" (click)="fnAcept()">
+            <img [src]="icoSrv.getIcon('acept')"/><span>Aceptar</span></button>
+    </div>
+</div>
+</div>
+</div>
